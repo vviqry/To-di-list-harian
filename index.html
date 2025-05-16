@@ -171,7 +171,7 @@
         <h2>2. Produktif</h2>
         <div class="subcategory">Rumus 136 (1 hari 3 konten selama 6 bulan)</div>
         <div class="todo-item">
-            <input type="checkbox" id="produktif-136" onchange="updateCheckbox('produktif-136')">
+            <input type="checkbox" id="produktif-136" disabled>
             <label for="produktif-136">Done</label>
         </div>
         <div class="progress-section">
@@ -200,32 +200,18 @@
             </div>
             <div class="progress-text" id="progress-text-111519">Progres: 0%</div>
         </div>
-
-        <h2>3. Running Honeygain</h2>
-        <div class="todo-item">
-            <input type="checkbox" id="honeygain" onchange="updateCheckbox('honeygain')">
-            <label for="honeygain">Done</label>
-        </div>
-        <div class="progress-section">
-            <div class="progress-bar">
-                <div class="progress" id="progress-honeygain"></div>
-            </div>
-            <div class="progress-text" id="progress-text-honeygain">Progres: 0%</div>
-        </div>
     </div>
 
     <script>
-        // Tanggal hari ini (sesuai sistem: 08:41 AM WIB, 14 Mei 2025)
-        const today = new Date('2025-05-14T08:41:00+07:00');
-        const startDate = new Date('2025-05-14T08:41:00+07:00'); // Mulai dari tanggal ini
+        // Tanggal hari ini (sesuai sistem: 07:51 AM WIB, 16 Mei 2025)
+        const today = new Date('2025-05-16T07:51:00+07:00');
+        const startDate = new Date('2025-05-16T07:51:00+07:00'); // Mulai dari tanggal ini
 
         // Tanggal akhir untuk progress bar
         const endDateProduktif = new Date('2025-11-30T23:59:59+07:00'); // Akhir November 2025
-        const endDateHoneygain = new Date('2025-10-31T23:59:59+07:00'); // Akhir Oktober 2025
 
         // Hitung total hari untuk progress bar
         const totalDaysProduktif = Math.ceil((endDateProduktif - startDate) / (1000 * 60 * 60 * 24)) + 1;
-        const totalDaysHoneygain = Math.ceil((endDateHoneygain - startDate) / (1000 * 60 * 60 * 24)) + 1;
 
         // Ambil data dari localStorage
         let state = JSON.parse(localStorage.getItem('todoState')) || {
@@ -239,16 +225,13 @@
                 'kuliah-pkn': false
             },
             produktif: {
-                'produktif-136': false,
                 'produktif-111519-11': false,
                 'produktif-111519-15': false,
                 'produktif-111519-19': false
             },
-            honeygain: { 'honeygain': false },
             progress: {
                 '136': [],
-                '111519': [],
-                'honeygain': []
+                '111519': []
             }
         };
 
@@ -284,20 +267,15 @@
                 state.kuliah[id] = isChecked;
             } else if (id.startsWith('produktif')) {
                 state.produktif[id] = isChecked;
-                if (isChecked) {
-                    if (id === 'produktif-136' && !state.progress['136'].includes(currentDate)) {
-                        state.progress['136'].push(currentDate);
-                    } else if (id.startsWith('produktif-111519')) {
-                        const group = ['produktif-111519-11', 'produktif-111519-15', 'produktif-111519-19'];
-                        if (group.includes(id) && group.every(g => state.produktif[g]) && !state.progress['111519'].includes(currentDate)) {
-                            state.progress['111519'].push(currentDate);
-                        }
-                    }
+                const group = ['produktif-111519-11', 'produktif-111519-15', 'produktif-111519-19'];
+                // Update status produktif-136 berdasarkan ketiga checkbox
+                const allChecked = group.every(g => state.produktif[g]);
+                document.getElementById('produktif-136').checked = allChecked;
+                if (allChecked && !state.progress['136'].includes(currentDate)) {
+                    state.progress['136'].push(currentDate);
                 }
-            } else if (id === 'honeygain') {
-                state.honeygain[id] = isChecked;
-                if (isChecked && !state.progress['honeygain'].includes(currentDate)) {
-                    state.progress['honeygain'].push(currentDate);
+                if (isChecked && group.includes(id) && group.every(g => state.produktif[g]) && !state.progress['111519'].includes(currentDate)) {
+                    state.progress['111519'].push(currentDate);
                 }
             }
 
@@ -319,12 +297,6 @@
             const percentage111519 = (progress111519 / totalDaysProduktif) * 100;
             document.getElementById('progress-111519').style.width = `${percentage111519}%`;
             document.getElementById('progress-text-111519').textContent = `Progres: ${Math.round(percentage111519)}%`;
-
-            // Progress untuk Honeygain
-            const progressHoneygain = state.progress['honeygain'].length;
-            const percentageHoneygain = (progressHoneygain / totalDaysHoneygain) * 100;
-            document.getElementById('progress-honeygain').style.width = `${percentageHoneygain}%`;
-            document.getElementById('progress-text-honeygain').textContent = `Progres: ${Math.round(percentageHoneygain)}%`;
         }
 
         // Render status checkbox dari state
@@ -335,9 +307,9 @@
             Object.keys(state.produktif).forEach(id => {
                 document.getElementById(id).checked = state.produktif[id];
             });
-            Object.keys(state.honeygain).forEach(id => {
-                document.getElementById(id).checked = state.honeygain[id];
-            });
+            // Update produktif-136 berdasarkan ketiga checkbox
+            const group = ['produktif-111519-11', 'produktif-111519-15', 'produktif-111519-19'];
+            document.getElementById('produktif-136').checked = group.every(id => state.produktif[id]);
         }
 
         // Inisialisasi
