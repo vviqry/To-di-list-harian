@@ -24,7 +24,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: relative; /* Biar tombol bisa diposisi absolut */
+            position: relative;
         }
 
         h1 {
@@ -38,13 +38,13 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #1ed900; /* Warna emas untuk kotak */
-            border: 2px solid #308322; /* Border kotak */
-            border-radius: 5px; /* Membuat sudut kotak agak melengkung */
+            background-color: #1ed900;
+            border: 2px solid #308322;
+            border-radius: 5px;
             padding: 5px;
             font-size: 24px;
             cursor: pointer;
-            color: #fff; /* Warna ikon jadi putih biar kontras */
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -54,13 +54,11 @@
         }
 
         .coin-button:hover {
-            background-color: #117a00; /* Hover effect */
+            background-color: #117a00;
         }
 
         .coin-button i {
-            margin margin-top: 9px; /* Hapus margin default dari ikon */
-            margin-bottom: 0px;
-            align-items: center;
+            margin: 0;
         }
 
         h2 {
@@ -131,6 +129,14 @@
         .divider span {
             padding: 0 10px;
         }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -168,156 +174,258 @@
 
         <div class="divider"><span>GARIS</span></div>
 
-        <h2>2. Produktif</h2>
+        <h2>2. Produktif (Tiktok Mukbang)</h2>
         <div class="subcategory">Rumus 136 (1 hari 3 konten selama 6 bulan)</div>
         <div class="todo-item">
-            <input type="checkbox" id="produktif-136" disabled>
-            <label for="produktif-136">Done</label>
+            <input type="checkbox" id="produktif-136-mukbang" disabled>
+            <label for="produktif-136-mukbang">Done</label>
         </div>
         <div class="progress-section">
             <div class="progress-bar">
-                <div class="progress" id="progress-136"></div>
+                <div class="progress" id="progress-136-mukbang"></div>
             </div>
-            <div class="progress-text" id="progress-text-136">Progres: 0%</div>
+            <div class="progress-text" id="progress-text-136-mukbang">Progres: 0%</div>
         </div>
-
         <div class="subcategory">Rumus 111519</div>
         <div class="todo-item">
-            <input type="checkbox" id="produktif-111519-11" onchange="updateCheckbox('produktif-111519-11')">
-            <label for="produktif-111519-11">Upload jam 11.00</label>
+            <input type="checkbox" id="produktif-111519-11-mukbang" onchange="updateCheckbox('produktif-111519-11-mukbang')">
+            <label for="produktif-111519-11-mukbang">Upload jam 11.00</label>
         </div>
         <div class="todo-item">
-            <input type="checkbox" id="produktif-111519-15" onchange="updateCheckbox('produktif-111519-15')">
-            <label for="produktif-111519-15">Upload jam 15.00</label>
+            <input type="checkbox" id="produktif-111519-15-mukbang" onchange="updateCheckbox('produktif-111519-15-mukbang')">
+            <label for="produktif-111519-15-mukbang">Upload jam 15.00</label>
         </div>
         <div class="todo-item">
-            <input type="checkbox" id="produktif-111519-19" onchange="updateCheckbox('produktif-111519-19')">
-            <label for="produktif-111519-19">Upload jam 19.00</label>
+            <input type="checkbox" id="produktif-111519-19-mukbang" onchange="updateCheckbox('produktif-111519-19-mukbang')">
+            <label for="produktif-111519-19-mukbang">Upload jam 19.00</label>
+        </div>
+
+        <div class="divider"><span>GARIS</span></div>
+
+        <h2>3. Produktif (Tiktok Skincare)</h2>
+        <div class="subcategory">Rumus 136 (1 hari 3 konten selama 6 bulan)</div>
+        <div class="todo-item">
+            <input type="checkbox" id="produktif-136-skincare" disabled>
+            <label for="produktif-136-skincare">Done</label>
         </div>
         <div class="progress-section">
             <div class="progress-bar">
-                <div class="progress" id="progress-111519"></div>
+                <div class="progress" id="progress-136-skincare"></div>
             </div>
-            <div class="progress-text" id="progress-text-111519">Progres: 0%</div>
+            <div class="progress-text" id="progress-text-136-skincare">Progres: 0%</div>
         </div>
+        <div class="subcategory">Rumus 111519</div>
+        <div class="todo-item">
+            <input type="checkbox" id="produktif-111519-11-skincare" onchange="updateCheckbox('produktif-111519-11-skincare')">
+            <label for="produktif-111519-11-skincare">Upload jam 11.00</label>
+        </div>
+        <div class="todo-item">
+            <input type="checkbox" id="produktif-111519-15-skincare" onchange="updateCheckbox('produktif-111519-15-skincare')">
+            <label for="produktif-111519-15-skincare">Upload jam 15.00</label>
+        </div>
+        <div class="todo-item">
+            <input type="checkbox" id="produktif-111519-19-skincare" onchange="updateCheckbox('produktif-111519-19-skincare')">
+            <label for="produktif-111519-19-skincare">Upload jam 19.00</label>
+        </div>
+
+        <div class="divider"><span>GARIS</span></div>
+
+        <h2>4. Produktif (Tiktok Manoutfit)</h2>
+        <div class="subcategory">Rumus 136 (1 hari 3 konten selama 6 bulan)</div>
+        <div class="todo-item">
+            <input type="checkbox" id="produktif-136-manoutfit" disabled>
+            <label for="produktif-136-manoutfit">Done</label>
+        </div>
+        <div class="progress-section">
+            <div class="progress-bar">
+                <div class="progress" id="progress-136-manoutfit"></div>
+            </div>
+            <div class="progress-text" id="progress-text-136-manoutfit">Progres: 0%</div>
+        </div>
+        <div class="subcategory">Rumus 111519</div>
+        <div class="todo-item">
+            <input type="checkbox" id="produktif-111519-11-manoutfit" onchange="updateCheckbox('produktif-111519-11-manoutfit')">
+            <label for="produktif-111519-11-manoutfit">Upload jam 11.00</label>
+        </div>
+        <div class="todo-item">
+            <input type="checkbox" id="produktif-111519-15-manoutfit" onchange="updateCheckbox('produktif-111519-15-manoutfit')">
+            <label for="produktif-111519-15-manoutfit">Upload jam 15.00</label>
+        </div>
+        <div class="todo-item">
+            <input type="checkbox" id="produktif-111519-19-manoutfit" onchange="updateCheckbox('produktif-111519-19-manoutfit')">
+            <label for="produktif-111519-19-manoutfit">Upload jam 19.00</label>
+        </div>
+
+        <div class="quote">"Lakukan & Lupakan"</div>
     </div>
 
     <script>
-        // Tanggal hari ini (sesuai sistem: 07:51 AM WIB, 16 Mei 2025)
-        const today = new Date('2025-05-16T07:51:00+07:00');
-        const startDate = new Date('2025-05-16T07:51:00+07:00'); // Mulai dari tanggal ini
+// Tanggal hari ini
+const today = new Date();
+const startDate = new Date('2025-05-16T07:51:00+07:00');
+const endDateProduktif = new Date('2025-11-30T23:59:59+07:00');
+const totalDaysProduktif = Math.ceil((endDateProduktif - startDate) / (1000 * 60 * 60 * 24)) + 1;
 
-        // Tanggal akhir untuk progress bar
-        const endDateProduktif = new Date('2025-11-30T23:59:59+07:00'); // Akhir November 2025
-
-        // Hitung total hari untuk progress bar
-        const totalDaysProduktif = Math.ceil((endDateProduktif - startDate) / (1000 * 60 * 60 * 24)) + 1;
-
-        // Ambil data dari localStorage
-        let state = JSON.parse(localStorage.getItem('todoState')) || {
-            lastReset: today.toISOString().split('T')[0],
-            kuliah: {
-                'kuliah-si': false,
-                'kuliah-matematika': false,
-                'kuliah-kalkulus': false,
-                'kuliah-bahasa': false,
-                'kuliah-agama': false,
-                'kuliah-pkn': false
-            },
-            produktif: {
-                'produktif-111519-11': false,
-                'produktif-111519-15': false,
-                'produktif-111519-19': false
-            },
-            progress: {
-                '136': [],
-                '111519': []
-            }
-        };
-
-        // Fungsi untuk mendapatkan nomor minggu dalam setahun
-        function getWeekNumber(date) {
-            const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-            const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
-            return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+// Default state structure
+const defaultState = {
+    lastReset: today.toISOString().split('T')[0],
+    lastDailyReset: today.toISOString().split('T')[0],
+    kuliah: {
+        'kuliah-si': false,
+        'kuliah-matematika': false,
+        'kuliah-kalkulus': false,
+        'kuliah-bahasa': false,
+        'kuliah-agama': false,
+        'kuliah-pkn': false
+    },
+    produktif: {
+        mukbang: {
+            'produktif-111519-11-mukbang': false,
+            'produktif-111519-15-mukbang': false,
+            'produktif-111519-19-mukbang': false
+        },
+        skincare: {
+            'produktif-111519-11-skincare': false,
+            'produktif-111519-15-skincare': false,
+            'produktif-111519-19-skincare': false
+        },
+        manoutfit: {
+            'produktif-111519-11-manoutfit': false,
+            'produktif-111519-15-manoutfit': false,
+            'produktif-111519-19-manoutfit': false
         }
+    },
+    progress: {
+        '136-mukbang': [],
+        '136-skincare': [],
+        '136-manoutfit': []
+    }
+};
 
-        // Reset checkbox Kuliah dan Produktif tiap minggu
-        function resetWeeklyCheckboxes() {
-            const currentWeek = getWeekNumber(today);
-            const lastResetDate = new Date(state.lastReset);
-            const lastResetWeek = getWeekNumber(lastResetDate);
+// Ambil data dari localStorage dengan fallback ke defaultState
+let state;
+try {
+    state = JSON.parse(localStorage.getItem('todoState')) || defaultState;
+    // Validate state structure
+    if (!state.produktif || !state.produktif.mukbang || !state.produktif.skincare || !state.produktif.manoutfit) {
+        state = defaultState;
+    }
+} catch (e) {
+    state = defaultState;
+}
 
-            if (currentWeek !== lastResetWeek) {
-                Object.keys(state.kuliah).forEach(key => state.kuliah[key] = false);
-                Object.keys(state.produktif).forEach(key => state.produktif[key] = false);
-                state.lastReset = today.toISOString().split('T')[0];
-                localStorage.setItem('todoState', JSON.stringify(state));
-            }
-        }
+// Fungsi untuk mendapatkan nomor minggu dalam setahun
+function getWeekNumber(date) {
+    const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+    const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
+    return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+}
 
-        // Update checkbox dan progress
-        function updateCheckbox(id) {
-            const checkbox = document.getElementById(id);
-            const isChecked = checkbox.checked;
-            const currentDate = today.toISOString().split('T')[0];
+// Reset checkbox Kuliah tiap minggu
+function resetWeeklyCheckboxes() {
+    const currentWeek = getWeekNumber(today);
+    const lastResetDate = new Date(state.lastReset);
+    const lastResetWeek = getWeekNumber(lastResetDate);
 
-            // Update state berdasarkan kategori
-            if (id.startsWith('kuliah')) {
-                state.kuliah[id] = isChecked;
-            } else if (id.startsWith('produktif')) {
-                state.produktif[id] = isChecked;
-                const group = ['produktif-111519-11', 'produktif-111519-15', 'produktif-111519-19'];
-                // Update status produktif-136 berdasarkan ketiga checkbox
-                const allChecked = group.every(g => state.produktif[g]);
-                document.getElementById('produktif-136').checked = allChecked;
-                if (allChecked && !state.progress['136'].includes(currentDate)) {
-                    state.progress['136'].push(currentDate);
-                }
-                if (isChecked && group.includes(id) && group.every(g => state.produktif[g]) && !state.progress['111519'].includes(currentDate)) {
-                    state.progress['111519'].push(currentDate);
-                }
-            }
+    if (currentWeek !== lastResetWeek) {
+        Object.keys(state.kuliah).forEach(key => state.kuliah[key] = false);
+        state.lastReset = today.toISOString().split('T')[0];
+        localStorage.setItem('todoState', JSON.stringify(state));
+    }
+}
 
-            localStorage.setItem('todoState', JSON.stringify(state));
-            updateProgress();
-            renderCheckboxes();
-        }
+// Reset checkbox Produktif tiap hari jam 1 pagi
+function resetDailyCheckboxes() {
+    const currentDate = today.toISOString().split('T')[0];
+    const lastDailyReset = state.lastDailyReset;
 
-        // Update progress bar
-        function updateProgress() {
-            // Progress untuk Rumus 136
-            const progress136 = state.progress['136'].length;
-            const percentage136 = (progress136 / totalDaysProduktif) * 100;
-            document.getElementById('progress-136').style.width = `${percentage136}%`;
-            document.getElementById('progress-text-136').textContent = `Progres: ${Math.round(percentage136)}%`;
-
-            // Progress untuk Rumus 111519
-            const progress111519 = state.progress['111519'].length;
-            const percentage111519 = (progress111519 / totalDaysProduktif) * 100;
-            document.getElementById('progress-111519').style.width = `${percentage111519}%`;
-            document.getElementById('progress-text-111519').textContent = `Progres: ${Math.round(percentage111519)}%`;
-        }
-
-        // Render status checkbox dari state
-        function renderCheckboxes() {
-            Object.keys(state.kuliah).forEach(id => {
-                document.getElementById(id).checked = state.kuliah[id];
-            });
-            Object.keys(state.produktif).forEach(id => {
-                document.getElementById(id).checked = state.produktif[id];
-            });
-            // Update produktif-136 berdasarkan ketiga checkbox
-            const group = ['produktif-111519-11', 'produktif-111519-15', 'produktif-111519-19'];
-            document.getElementById('produktif-136').checked = group.every(id => state.produktif[id]);
-        }
-
-        // Inisialisasi
-        document.addEventListener('DOMContentLoaded', () => {
-            resetWeeklyCheckboxes();
-            renderCheckboxes();
-            updateProgress();
+    if (currentDate !== lastDailyReset) {
+        Object.values(state.produktif).forEach(category => {
+            Object.keys(category).forEach(key => category[key] = false);
         });
-    </script>
+        state.lastDailyReset = currentDate;
+        localStorage.setItem('todoState', JSON.stringify(state));
+    }
+}
+
+// Update checkbox dan progress
+function updateCheckbox(id) {
+    const checkbox = document.getElementById(id);
+    const isChecked = checkbox.checked;
+    const currentDate = today.toISOString().split('T')[0];
+
+    // Update state berdasarkan kategori
+    if (id.startsWith('kuliah')) {
+        state.kuliah[id] = isChecked;
+    } else if (id.startsWith('produktif')) {
+        const platform = id.split('-').pop();
+        if (state.produktif[platform]) {
+            state.produktif[platform][id] = isChecked;
+            
+            const group = [
+                `produktif-111519-11-${platform}`,
+                `produktif-111519-15-${platform}`,
+                `produktif-111519-19-${platform}`
+            ];
+            
+            // Update status produktif-136 berdasarkan ketiga checkbox
+            const allChecked = group.every(g => state.produktif[platform][g]);
+            document.getElementById(`produktif-136-${platform}`).checked = allChecked;
+            
+            if (allChecked && !state.progress[`136-${platform}`].includes(currentDate)) {
+                state.progress[`136-${platform}`].push(currentDate);
+            }
+        }
+    }
+
+    localStorage.setItem('todoState', JSON.stringify(state));
+    updateProgress();
+    renderCheckboxes();
+}
+
+// Update progress bar
+function updateProgress() {
+    ['mukbang', 'skincare', 'manoutfit'].forEach(platform => {
+        const progress136 = state.progress[`136-${platform}`].length;
+        const percentage136 = (progress136 / totalDaysProduktif) * 100;
+        document.getElementById(`progress-136-${platform}`).style.width = `${percentage136}%`;
+        document.getElementById(`progress-text-136-${platform}`).textContent = `Progres: ${Math.round(percentage136)}%`;
+    });
+}
+
+// Render status checkbox dari state
+function renderCheckboxes() {
+    Object.keys(state.kuliah).forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox) checkbox.checked = state.kuliah[id];
+    });
+    
+    ['mukbang', 'skincare', 'manoutfit'].forEach(platform => {
+        const group = [
+            `produktif-111519-11-${platform}`,
+            `produktif-111519-15-${platform}`,
+            `produktif-111519-19-${platform}`
+        ];
+        group.forEach(id => {
+            const checkbox = document.getElementById(id);
+            if (checkbox && state.produktif[platform]) {
+                checkbox.checked = state.produktif[platform][id] || false;
+            }
+        });
+        const doneCheckbox = document.getElementById(`produktif-136-${platform}`);
+        if (doneCheckbox && state.produktif[platform]) {
+            doneCheckbox.checked = group.every(id => state.produktif[platform][id]);
+        }
+    });
+}
+
+// Inisialisasi
+document.addEventListener('DOMContentLoaded', () => {
+    resetWeeklyCheckboxes();
+    resetDailyCheckboxes();
+    renderCheckboxes();
+    updateProgress();
+});
+</script>
 </body>
 </html>
